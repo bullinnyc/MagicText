@@ -282,8 +282,10 @@ public struct MagicView: View {
 // MARK: - Preview Provider
 struct MagicView_Previews: PreviewProvider {
     static var previews: some View {
+        let text = "Life is like a box of chocolates, you never know what you’re gonna get."
+        
         MagicView(
-            text: "Life is like a box of chocolates, you never know what you’re gonna get.",
+            text: text,
             fontSize: 30,
             minCharactersPerLine: 10
         )

@@ -5,7 +5,7 @@
 Magic text is the perfect solution when you need to show a small amount of information in a pretty wrapper.
 
 ## Gifs
-![](./charmed.gif) ![](./art-letter.gif) ![](./bubble.gif) ![](./fantasy.gif) ![](./charmed-letter.gif) ![](./charmed-color.gif)
+![](./charmed.gif) ![](./charmed-color.gif) ![](./bubble.gif) ![](./fantasy.gif) ![](./charmed-letter.gif) ![](./art-letter.gif)
 
 ## Installation
 ### [Swift Package Manager](https://swift.org/package-manager/)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ArtLetterView: View {
     // MARK: - Property Wrappers
-    @State private var blur: CGFloat = 10
+    @State private var opacity: Double = 0
     @State private var isAnimationCompleted = false
     
     // MARK: - Public Properties
@@ -26,18 +26,17 @@ struct ArtLetterView: View {
         let updatedSymbol = symbol == " " ? "  " : symbol
         let colors = DataManager.colorsName.map { Color($0) }
         
-        let color = blur == .zero && symbol != " "
+        let color = opacity == 1 && symbol != " "
         ? colors.randomElement() ?? .clear
         : .clear
         
         Text(updatedSymbol)
             .font(.custom(fontName, size: fontSize))
             .foregroundColor(textColor)
-            .blur(radius: blur)
-            .opacity(blur == .zero ? 1 : 0)
+            .opacity(opacity)
             .padding([.leading, .trailing], 1)
-            .background(color.brightness(0.45))
-            .onAnimationCompleted(value: blur) {
+            .background(color.brightness(0.25))
+            .onAnimationCompleted(value: opacity) {
                 guard !isAnimationCompleted else { return }
                 
                 isAnimationCompleted.toggle()
@@ -45,7 +44,7 @@ struct ArtLetterView: View {
             }
             .onAppear {
                 withAnimation(.easeInOut.delay(delay)) {
-                    blur = .zero
+                    opacity = 1
                 }
             }
     }
