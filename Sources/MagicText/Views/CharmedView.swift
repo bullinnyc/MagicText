@@ -10,10 +10,12 @@ import SwiftUI
 
 struct CharmedView: View {
     // MARK: - Property Wrappers
+    
     @State private var blur: CGFloat = 10
     @State private var isAnimationCompleted = false
     
     // MARK: - Public Properties
+    
     let symbol: String
     let textColor: Color
     let fontName: String
@@ -22,7 +24,8 @@ struct CharmedView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - body Property
+    // MARK: - Body Property
+    
     var body: some View {
         Group {
             if isMask {
@@ -61,13 +64,14 @@ struct CharmedView: View {
 }
 
 // MARK: - Preview Provider
+
 struct CharmedView_Previews: PreviewProvider {
     static var previews: some View {
         CharmedView(
             symbol: "K",
             textColor: .black,
             fontName: "Baskerville",
-            fontSize: 30,
+            fontSize: 28,
             isMask: true,
             delay: 0
         ) {}

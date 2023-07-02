@@ -10,10 +10,12 @@ import SwiftUI
 
 struct BubbleView: View {
     // MARK: - Property Wrappers
+    
     @State private var blur: CGFloat = 10
     @State private var isAnimationCompleted = false
     
     // MARK: - Public Properties
+    
     let symbol: String
     let textColor: Color
     let fontName: String
@@ -22,7 +24,8 @@ struct BubbleView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - body Property
+    // MARK: - Body Property
+    
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
         
@@ -73,13 +76,14 @@ struct BubbleView: View {
 }
 
 // MARK: - Preview Provider
+
 struct BubbleView_Previews: PreviewProvider {
     static var previews: some View {
         BubbleView(
             symbol: "K",
             textColor: .black,
             fontName: "Baskerville",
-            fontSize: 30,
+            fontSize: 28,
             isMask: true,
             delay: 0
         ) {}

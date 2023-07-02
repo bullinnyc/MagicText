@@ -11,9 +11,11 @@ import SwiftUI
 /// Show a magic view.
 public struct MagicView: View {
     // MARK: - Property Wrappers
+    
     @State private var animationCounter = 0
     
     // MARK: - Private Properties
+    
     private let text: String
     private let textColors: [Color]
     private let textAlignment: HorizontalAlignment
@@ -25,6 +27,7 @@ public struct MagicView: View {
     private let completion: (() -> Void)?
     
     // MARK: - Public Enums
+    
     public enum MagicType {
         case charmed
         case artLetter
@@ -33,22 +36,28 @@ public struct MagicView: View {
         case charmedLetter(backgroundColor: Color = .red)
     }
     
-    // MARK: - body Property
+    // MARK: - Body Property
+    
     public var body: some View {
         VStack(alignment: textAlignment) {
-            let texts = createTexts(text, minCharactersPerLine: minCharactersPerLine)
+            let texts = createTexts(
+                text: text,
+                minCharactersPerLine: minCharactersPerLine
+            )
+            
             let textCount = texts.joined().count
             
             ForEach(texts, id: \.self) { element in
                 HStack(spacing: 0.5) {
                     ForEach(0 ..< element.count, id: \.self) { index in
-                        let perLineDelay = delayStart + Double.random(in: 0.1 ... 1.8)
+                        let perLineDelay = delayStart +
+                            Double.random(in: 0.1 ... 1.8)
                         
                         let firstDelay = perLineDelay + Double(index) * 0.5 *
-                        Double.random(in: 0.004 ... 0.5)
+                            Double.random(in: 0.004 ... 0.5)
                         
                         let secondDelay = perLineDelay + Double(index) *
-                        Double.random(in: 0.1 ... 0.3)
+                            Double.random(in: 0.1 ... 0.3)
                         
                         let symbol = String(Array(element)[index])
                         let textColor = textColors.randomElement() ?? .black
@@ -193,6 +202,7 @@ public struct MagicView: View {
     }
     
     // MARK: - Initializers
+    
     /// - Parameters:
     ///   - text: Text to be displayed.
     ///   - textColors: Colors for text. Default value `.black`.
@@ -228,12 +238,18 @@ public struct MagicView: View {
     }
     
     // MARK: - Private Methods
-    private func createTexts(_ text: String, minCharactersPerLine: Int) -> [String] {
+    
+    private func createTexts(
+        text: String,
+        minCharactersPerLine: Int
+    ) -> [String] {
         var texts: [String] = []
         var lineOfText = ""
         
+        let isNewline = text.first(where: { $0.isNewline }) != nil
+        
         text.enumerated().forEach { index, character in
-            if text.contains(where: { $0.isNewline }) {
+            if isNewline {
                 if character == "\n" {
                     texts.append(lineOfText)
                     lineOfText = ""
@@ -280,13 +296,14 @@ public struct MagicView: View {
 }
 
 // MARK: - Preview Provider
+
 struct MagicView_Previews: PreviewProvider {
     static var previews: some View {
         let text = "Life is like a box of chocolates, you never know what you’re gonna get."
         
         MagicView(
             text: text,
-            fontSize: 30,
+            fontSize: 28,
             minCharactersPerLine: 10
         )
     }

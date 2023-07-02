@@ -10,10 +10,12 @@ import SwiftUI
 
 struct ArtLetterView: View {
     // MARK: - Property Wrappers
+    
     @State private var opacity: Double = 0
     @State private var isAnimationCompleted = false
     
     // MARK: - Public Properties
+    
     let symbol: String
     let textColor: Color
     let fontName: String
@@ -21,7 +23,8 @@ struct ArtLetterView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - body Property
+    // MARK: - Body Property
+    
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
         let colors = DataManager.colorsName.map { Color($0) }
@@ -51,13 +54,14 @@ struct ArtLetterView: View {
 }
 
 // MARK: - Preview Provider
+
 struct ArtLetterView_Previews: PreviewProvider {
     static var previews: some View {
         ArtLetterView(
             symbol: "K",
             textColor: .black,
             fontName: "Baskerville",
-            fontSize: 30,
+            fontSize: 28,
             delay: 0
         ) {}
     }

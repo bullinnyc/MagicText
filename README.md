@@ -10,7 +10,7 @@ Magic text is the perfect solution when you need to show a small amount of infor
 ## Installation
 ### [Swift Package Manager](https://swift.org/package-manager/)
 
-Going to Xcode `File` > `Add Packages...` and add the repository by giving the URL `https://github.com/bullinnyc/MagicText`
+Going to Xcode `File` > `Add Packages...` and add the repository by giving the URL `https://github.com/bullinnyc/MagicText`  
 Enjoy!
 
 ## Usage

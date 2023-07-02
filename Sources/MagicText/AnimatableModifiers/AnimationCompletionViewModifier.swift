@@ -12,6 +12,7 @@ struct AnimationCompletionAnimatableModifier<Value>:
     AnimatableModifier where Value: VectorArithmetic
 {
     // MARK: - Animatable Protocol Properties
+    
     var animatableData: Value {
         didSet {
             notifyCompletionIfFinished()
@@ -19,22 +20,26 @@ struct AnimationCompletionAnimatableModifier<Value>:
     }
     
     // MARK: - Private Properties
+    
     private let targetValue: Value
     private let completion: () -> Void
     
     // MARK: - Initializers
+    
     init(value: Value, completion: @escaping () -> Void) {
         self.completion = completion
         animatableData = value
         targetValue = value
     }
     
-    // MARK: - body Method
+    // MARK: - Body Method
+    
     func body(content: Content) -> some View {
         content
     }
     
     // MARK: - Private Methods
+    
     private func notifyCompletionIfFinished() {
         guard animatableData == targetValue else { return }
         
@@ -45,6 +50,7 @@ struct AnimationCompletionAnimatableModifier<Value>:
 }
 
 // MARK: - Ext. View
+
 extension View {
     func onAnimationCompleted<Value: VectorArithmetic>(
         value: Value,

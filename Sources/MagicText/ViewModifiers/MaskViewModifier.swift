@@ -10,11 +10,13 @@ import SwiftUI
 
 private struct MaskViewModifier: ViewModifier {
     // MARK: - Public Properties
+    
     let text: String
     let fontName: String
     let fontScale: CGFloat
     
-    // MARK: - body Method
+    // MARK: - Body Method
+    
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
             content
@@ -33,6 +35,7 @@ private struct MaskViewModifier: ViewModifier {
 }
 
 // MARK: - Ext. View
+
 extension View {
     func mask(
         text: String,

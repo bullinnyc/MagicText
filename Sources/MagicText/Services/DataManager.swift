@@ -10,8 +10,9 @@ import Foundation
 
 class DataManager {
     // MARK: - Public Properties
+    
     static let colorsName = [
-        candy, coffee, flower, forest, newyork,
-        night, sky, smoke, theia, venus
+        RM.candy, RM.coffee, RM.flower, RM.forest, RM.newyork,
+        RM.night, RM.sky, RM.smoke, RM.theia, RM.venus
     ]
 }

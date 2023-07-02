@@ -10,10 +10,12 @@ import SwiftUI
 
 struct CharmedLetterView: View {
     // MARK: - Property Wrappers
+    
     @State private var blur: CGFloat = 10
     @State private var isAnimationCompleted = false
     
     // MARK: - Public Properties
+    
     let symbol: String
     let textColor: Color
     let fontName: String
@@ -23,7 +25,8 @@ struct CharmedLetterView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - body Property
+    // MARK: - Body Property
+    
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
         
@@ -74,13 +77,14 @@ struct CharmedLetterView: View {
 }
 
 // MARK: - Preview Provider
+
 struct CharmedLetterView_Previews: PreviewProvider {
     static var previews: some View {
         CharmedLetterView(
             symbol: "K",
             textColor: .black,
             fontName: "Baskerville",
-            fontSize: 30,
+            fontSize: 28,
             backgroundColor: .red,
             isMask: true,
             delay: 0

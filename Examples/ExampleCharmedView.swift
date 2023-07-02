@@ -12,6 +12,7 @@ import MagicText
 
 struct ExampleCharmedView: View {
     // MARK: - Private Properties
+    
     private let singleLineExampleText = "Life is like a box of chocolates, you never know what you’re gonna get."
     
     private let multiLineExampleText = """
@@ -22,17 +23,18 @@ struct ExampleCharmedView: View {
     """
     
     private let colors = [
-        candy, coffee, flower, forest, newyork,
-        night, sky, smoke, theia, venus
+        RM.candy, RM.coffee, RM.flower, RM.forest, RM.newyork,
+        RM.night, RM.sky, RM.smoke, RM.theia, RM.venus
     ]
     
-    // MARK: - body Property
+    // MARK: - Body Property
+    
     var body: some View {
         VStack(spacing: 25) {
             // Charmed magic text (default).
             MagicView(
                 text: singleLineExampleText,
-                fontSize: 30
+                fontSize: 28
             ) {
                 print("Animation finished")
             }
@@ -42,7 +44,7 @@ struct ExampleCharmedView: View {
             MagicView(
                 text: multiLineExampleText,
                 textColors: [.black, .red, .orange, .yellow, .green, .blue],
-                fontSize: 30,
+                fontSize: 28,
                 delayStart: 5
             ) {
                 print("Animation finished")
