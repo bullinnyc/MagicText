@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "276FEBCA-28BB-4ABB-B9B6-426F493EA1F8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MagicTextTests",
+        "name" : "MagicTextTests"
+      }
+    }
+  ],
+  "version" : 1
+}
