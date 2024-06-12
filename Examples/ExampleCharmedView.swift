@@ -6,7 +6,6 @@
 //  Copyright © 2023 Dmitry Kononchuk. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 import MagicText
 
@@ -60,4 +59,3 @@ struct ExampleCharmedView_Previews: PreviewProvider {
         ExampleCharmedView()
     }
 }
-#endif
