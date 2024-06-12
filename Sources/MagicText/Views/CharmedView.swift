@@ -24,7 +24,7 @@ struct CharmedView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         Group {
@@ -69,7 +69,7 @@ struct CharmedView_Previews: PreviewProvider {
     static var previews: some View {
         CharmedView(
             symbol: "K",
-            textColor: .black,
+            textColor: RM.yinYang.color,
             fontName: "Baskerville",
             fontSize: 28,
             isMask: true,

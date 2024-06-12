@@ -6,7 +6,6 @@
 //  Copyright © 2023 Dmitry Kononchuk. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 import MagicText
 
@@ -22,35 +21,30 @@ struct ExampleCharmedLetterView: View {
     gonna get.
     """
     
-    private let colors = [
-        RM.candy, RM.coffee, RM.flower, RM.forest, RM.newyork,
-        RM.night, RM.sky, RM.smoke, RM.theia, RM.venus
-    ]
-    
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         VStack(spacing: 25) {
             // Charmed letter magic text.
-            MagicView(
+            MagicTextView(
                 text: singleLineExampleText,
-                textColors: [.black.opacity(0.7)],
+                textColors: [RM.yinYang.color.opacity(0.8)],
                 fontSize: 28,
                 magicType: .charmedLetter()
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
             .padding(.bottom)
             
             // Charmed letter magic text with different colors.
-            MagicView(
+            MagicTextView(
                 text: multiLineExampleText,
-                textColors: colors.map { Color($0) },
+                textColors: [RM.yinYang.color.opacity(0.8)],
                 fontSize: 28,
                 magicType: .charmedLetter(backgroundColor: .blue),
                 delayStart: 5
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
         }
     }
@@ -63,4 +57,3 @@ struct ExampleCharmedLetterView_Previews: PreviewProvider {
         ExampleCharmedLetterView()
     }
 }
-#endif

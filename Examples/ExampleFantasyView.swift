@@ -6,7 +6,6 @@
 //  Copyright © 2023 Dmitry Kononchuk. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 import MagicText
 
@@ -27,30 +26,30 @@ struct ExampleFantasyView: View {
         RM.night, RM.sky, RM.smoke, RM.theia, RM.venus
     ]
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         VStack(spacing: 25) {
             // Fantasy magic text.
-            MagicView(
+            MagicTextView(
                 text: singleLineExampleText,
-                textColors: [.black.opacity(0.7)],
+                textColors: [RM.yinYang.color.opacity(0.8)],
                 fontSize: 28,
                 magicType: .fantasy
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
             .padding(.bottom)
             
             // Fantasy magic text with different colors.
-            MagicView(
+            MagicTextView(
                 text: multiLineExampleText,
-                textColors: colors.map { Color($0) },
+                textColors: colors.map { $0.color },
                 fontSize: 28,
                 magicType: .fantasy,
                 delayStart: 5
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
         }
     }
@@ -63,4 +62,3 @@ struct ExampleFantasyView_Previews: PreviewProvider {
         ExampleFantasyView()
     }
 }
-#endif

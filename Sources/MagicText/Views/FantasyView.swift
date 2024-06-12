@@ -24,7 +24,7 @@ struct FantasyView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
@@ -32,11 +32,11 @@ struct FantasyView: View {
         Group {
             if isMask {
                 let fontScale = fontSize * Double.random(in: 0.7 ... 0.9)
-                let colors = DataManager.colorsName.map { Color($0) }
+                let colors = DataManager.colors.map { $0.color }
                 
                 let color = blur == .zero && symbol != " "
-                ? colors.randomElement() ?? .clear
-                : .clear
+                    ? colors.randomElement() ?? .clear
+                    : .clear
                 
                 Text(updatedSymbol)
                     .font(.custom(fontName, size: fontSize))
@@ -82,7 +82,7 @@ struct FantasyView_Previews: PreviewProvider {
     static var previews: some View {
         FantasyView(
             symbol: "K",
-            textColor: .black,
+            textColor: RM.yinYang.color,
             fontName: "Baskerville",
             fontSize: 28,
             isMask: true,
