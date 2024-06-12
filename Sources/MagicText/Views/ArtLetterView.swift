@@ -27,7 +27,7 @@ struct ArtLetterView: View {
     
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
-        let colors = DataManager.colors.map { Color($0) }
+        let colors = DataManager.colors.map { $0.color }
         
         let color = opacity == 1 && symbol != " "
             ? colors.randomElement() ?? .clear
@@ -59,7 +59,7 @@ struct ArtLetterView_Previews: PreviewProvider {
     static var previews: some View {
         ArtLetterView(
             symbol: "K",
-            textColor: Color(RM.yinYang),
+            textColor: RM.yinYang.color,
             fontName: "Baskerville",
             fontSize: 28,
             delay: 0

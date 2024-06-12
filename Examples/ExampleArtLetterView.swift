@@ -33,7 +33,7 @@ struct ExampleArtLetterView: View {
             // Art letter magic text.
             MagicTextView(
                 text: singleLineExampleText,
-                textColors: [Color(RM.yinYang).opacity(0.8)],
+                textColors: [RM.yinYang.color.opacity(0.8)],
                 fontSize: 28,
                 magicType: .artLetter
             ) {
@@ -44,7 +44,7 @@ struct ExampleArtLetterView: View {
             // Art letter magic text with different colors.
             MagicTextView(
                 text: multiLineExampleText,
-                textColors: colors.map { Color($0) },
+                textColors: colors.map { $0.color },
                 fontSize: 28,
                 magicType: .artLetter,
                 delayStart: 5

@@ -32,7 +32,7 @@ struct FantasyView: View {
         Group {
             if isMask {
                 let fontScale = fontSize * Double.random(in: 0.7 ... 0.9)
-                let colors = DataManager.colors.map { Color($0) }
+                let colors = DataManager.colors.map { $0.color }
                 
                 let color = blur == .zero && symbol != " "
                     ? colors.randomElement() ?? .clear
@@ -82,7 +82,7 @@ struct FantasyView_Previews: PreviewProvider {
     static var previews: some View {
         FantasyView(
             symbol: "K",
-            textColor: Color(RM.yinYang),
+            textColor: RM.yinYang.color,
             fontName: "Baskerville",
             fontSize: 28,
             isMask: true,

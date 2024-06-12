@@ -42,7 +42,7 @@ struct ExampleCharmedView: View {
             // Charmed magic text with different colors.
             MagicTextView(
                 text: multiLineExampleText,
-                textColors: colors.map { Color($0) },
+                textColors: colors.map { $0.color },
                 fontSize: 28,
                 delayStart: 5
             ) {

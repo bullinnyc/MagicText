@@ -82,7 +82,7 @@ struct CharmedLetterView_Previews: PreviewProvider {
     static var previews: some View {
         CharmedLetterView(
             symbol: "K",
-            textColor: Color(RM.yinYang),
+            textColor: RM.yinYang.color,
             fontName: "Baskerville",
             fontSize: 28,
             backgroundColor: .red,

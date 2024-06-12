@@ -28,7 +28,7 @@ struct ExampleCharmedLetterView: View {
             // Charmed letter magic text.
             MagicTextView(
                 text: singleLineExampleText,
-                textColors: [Color(RM.yinYang).opacity(0.8)],
+                textColors: [RM.yinYang.color.opacity(0.8)],
                 fontSize: 28,
                 magicType: .charmedLetter()
             ) {
@@ -39,7 +39,7 @@ struct ExampleCharmedLetterView: View {
             // Charmed letter magic text with different colors.
             MagicTextView(
                 text: multiLineExampleText,
-                textColors: [Color(RM.yinYang).opacity(0.8)],
+                textColors: [RM.yinYang.color.opacity(0.8)],
                 fontSize: 28,
                 magicType: .charmedLetter(backgroundColor: .blue),
                 delayStart: 5

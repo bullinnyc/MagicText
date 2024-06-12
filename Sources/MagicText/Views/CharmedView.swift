@@ -69,7 +69,7 @@ struct CharmedView_Previews: PreviewProvider {
     static var previews: some View {
         CharmedView(
             symbol: "K",
-            textColor: Color(RM.yinYang),
+            textColor: RM.yinYang.color,
             fontName: "Baskerville",
             fontSize: 28,
             isMask: true,

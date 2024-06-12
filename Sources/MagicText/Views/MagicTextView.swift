@@ -17,7 +17,7 @@ public struct MagicTextView: View {
         case artLetter
         case bubble
         case fantasy
-        case charmedLetter(backgroundColor: Color = Color(RM.candy))
+        case charmedLetter(backgroundColor: Color = RM.candy.color)
     }
     
     // MARK: - Property Wrappers
@@ -53,7 +53,7 @@ public struct MagicTextView: View {
     ///   - completion: A block object to be executed when the animation sequence ends.
     public init(
         text: String,
-        textColors: [Color] = [Color(RM.yinYang)],
+        textColors: [Color] = [RM.yinYang.color],
         textAlignment: TextAlignment = .center,
         fontName: String = "Baskerville",
         fontSize: CGFloat,
@@ -408,7 +408,7 @@ struct MagicTextView_Previews: PreviewProvider {
         
         MagicTextView(
             text: text,
-            textColors: [Color(RM.yinYang).opacity(0.8)],
+            textColors: [RM.yinYang.color.opacity(0.8)],
             fontSize: fontSize,
             minCharactersPerLine: minCharactersPerLine,
             magicType: .charmedLetter(backgroundColor: .blue)
@@ -416,7 +416,7 @@ struct MagicTextView_Previews: PreviewProvider {
         
         MagicTextView(
             text: text,
-            textColors: [Color(RM.yinYang).opacity(0.8)],
+            textColors: [RM.yinYang.color.opacity(0.8)],
             fontSize: fontSize,
             minCharactersPerLine: minCharactersPerLine,
             magicType: .bubble
@@ -424,7 +424,7 @@ struct MagicTextView_Previews: PreviewProvider {
         
         MagicTextView(
             text: text,
-            textColors: [Color(RM.yinYang).opacity(0.8)],
+            textColors: [RM.yinYang.color.opacity(0.8)],
             fontSize: fontSize,
             minCharactersPerLine: minCharactersPerLine,
             magicType: .fantasy
@@ -432,7 +432,7 @@ struct MagicTextView_Previews: PreviewProvider {
         
         MagicTextView(
             text: text,
-            textColors: [Color(RM.yinYang).opacity(0.8)],
+            textColors: [RM.yinYang.color.opacity(0.8)],
             fontSize: fontSize,
             minCharactersPerLine: minCharactersPerLine,
             magicType: .artLetter
