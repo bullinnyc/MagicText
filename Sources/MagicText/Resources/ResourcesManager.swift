@@ -17,6 +17,13 @@ public final class ResourcesManager {
     // MARK: - Public Properties
     
     /// An object that stores color data.
+    public static let yinYang = UIColor(
+        named: "yinYang",
+        in: Bundle.module,
+        compatibleWith: nil
+    ) ?? UIColor()
+    
+    /// An object that stores color data.
     public static let candy = UIColor(
         named: "candy",
         in: Bundle.module,

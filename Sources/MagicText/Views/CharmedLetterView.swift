@@ -25,7 +25,7 @@ struct CharmedLetterView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
@@ -35,8 +35,8 @@ struct CharmedLetterView: View {
                 let fontScale = fontSize * Double.random(in: 0.7 ... 0.9)
                 
                 let color = symbol != " "
-                ? backgroundColor
-                : .clear
+                    ? backgroundColor
+                    : .clear
                 
                 Text(updatedSymbol)
                     .font(.custom(fontName, size: fontSize))
@@ -82,7 +82,7 @@ struct CharmedLetterView_Previews: PreviewProvider {
     static var previews: some View {
         CharmedLetterView(
             symbol: "K",
-            textColor: .black,
+            textColor: Color(RM.yinYang),
             fontName: "Baskerville",
             fontSize: 28,
             backgroundColor: .red,

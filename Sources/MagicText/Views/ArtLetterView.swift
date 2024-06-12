@@ -23,15 +23,15 @@ struct ArtLetterView: View {
     let delay: Double
     let completion: () -> Void
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         let updatedSymbol = symbol == " " ? "  " : symbol
-        let colors = DataManager.colorsName.map { Color($0) }
+        let colors = DataManager.colors.map { Color($0) }
         
         let color = opacity == 1 && symbol != " "
-        ? colors.randomElement() ?? .clear
-        : .clear
+            ? colors.randomElement() ?? .clear
+            : .clear
         
         Text(updatedSymbol)
             .font(.custom(fontName, size: fontSize))
@@ -59,7 +59,7 @@ struct ArtLetterView_Previews: PreviewProvider {
     static var previews: some View {
         ArtLetterView(
             symbol: "K",
-            textColor: .black,
+            textColor: Color(RM.yinYang),
             fontName: "Baskerville",
             fontSize: 28,
             delay: 0

@@ -27,33 +27,34 @@ struct ExampleCharmedView: View {
         RM.night, RM.sky, RM.smoke, RM.theia, RM.venus
     ]
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         VStack(spacing: 25) {
             // Charmed magic text (default).
-            MagicView(
+            MagicTextView(
                 text: singleLineExampleText,
                 fontSize: 28
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
             .padding(.bottom)
             
             // Charmed magic text with different colors.
-            MagicView(
+            MagicTextView(
                 text: multiLineExampleText,
-                textColors: [.black, .red, .orange, .yellow, .green, .blue],
+                textColors: colors.map { Color($0) },
                 fontSize: 28,
                 delayStart: 5
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
         }
     }
 }
 
 // MARK: - Preview Provider
+
 struct ExampleCharmedView_Previews: PreviewProvider {
     static var previews: some View {
         ExampleCharmedView()

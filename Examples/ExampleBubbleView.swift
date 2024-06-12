@@ -27,30 +27,30 @@ struct ExampleBubbleView: View {
         RM.night, RM.sky, RM.smoke, RM.theia, RM.venus
     ]
     
-    // MARK: - Body Property
+    // MARK: - Body
     
     var body: some View {
         VStack(spacing: 25) {
             // Bubble magic text.
-            MagicView(
+            MagicTextView(
                 text: singleLineExampleText,
-                textColors: [.black.opacity(0.7)],
+                textColors: [Color(RM.yinYang).opacity(0.8)],
                 fontSize: 28,
                 magicType: .bubble
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
             .padding(.bottom)
             
             // Bubble magic text with different colors.
-            MagicView(
+            MagicTextView(
                 text: multiLineExampleText,
                 textColors: colors.map { Color($0) },
                 fontSize: 28,
                 magicType: .bubble,
                 delayStart: 5
             ) {
-                print("Animation finished")
+                print("Animation finished.")
             }
         }
     }

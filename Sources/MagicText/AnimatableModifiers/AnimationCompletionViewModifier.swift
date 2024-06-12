@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct AnimationCompletionAnimatableModifier<Value>:
-    AnimatableModifier where Value: VectorArithmetic
-{
+    AnimatableModifier where Value: VectorArithmetic {
     // MARK: - Animatable Protocol Properties
     
     var animatableData: Value {
