@@ -52,6 +52,7 @@ MagicTextView(
 ```
 
 ### Set the type of MagicText
+
 **Note:** Default `magicType` is set to `charmed`.  
 You can try other types.
 
